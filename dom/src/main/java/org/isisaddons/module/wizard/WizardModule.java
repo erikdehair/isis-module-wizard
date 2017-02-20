@@ -14,14 +14,14 @@
  *  specific language governing permissions and limitations
  *  under the License.
  */
-package org.isisaddons.module.xxx;
+package org.isisaddons.module.wizard;
 
 import java.util.List;
 import org.apache.isis.applib.Identifier;
 
-public final class XxxModule {
+public final class WizardModule {
 
-    private XxxModule(){}
+    private WizardModule(){}
 
     public abstract static class ActionDomainEvent<S> extends org.apache.isis.applib.services.eventbus.ActionDomainEvent<S> {
         public ActionDomainEvent(final S source, final Identifier identifier) {

@@ -16,8 +16,8 @@
  *  specific language governing permissions and limitations
  *  under the License.
  */
-package org.isisaddons.module.xxx.app;
+package org.isisaddons.module.wizard.app;
 
-public final class XxxModuleAppModule {
-    private XxxModuleAppModule(){}
+public final class WizardModuleAppModule {
+    private WizardModuleAppModule(){}
 }

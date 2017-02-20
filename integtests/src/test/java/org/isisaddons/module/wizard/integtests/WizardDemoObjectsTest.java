@@ -14,53 +14,50 @@
  *  specific language governing permissions and limitations
  *  under the License.
  */
-package org.isisaddons.module.xxx.integtests;
+package org.isisaddons.module.wizard.integtests;
 
-import java.util.List;
-
-import javax.inject.Inject;
-
+import org.apache.isis.applib.fixturescripts.FixtureScripts;
 import org.assertj.core.api.Assertions;
+import org.isisaddons.module.wizard.fixture.dom.WizardDemoObject;
+import org.isisaddons.module.wizard.fixture.dom.WizardDemoObjects;
+import org.isisaddons.module.wizard.fixture.scripts.scenarios.WizardDemoObjectsFixture;
 import org.junit.Before;
 import org.junit.Test;
 
-import org.apache.isis.applib.fixturescripts.FixtureScripts;
-
-import org.isisaddons.module.xxx.fixture.dom.XxxDemoObject;
-import org.isisaddons.module.xxx.fixture.dom.XxxDemoObjects;
-import org.isisaddons.module.xxx.fixture.scripts.scenarios.XxxDemoObjectsFixture;
+import javax.inject.Inject;
+import java.util.List;
 
 
-public class XxxDemoObjectsTest extends XxxModuleIntegTest {
+public class WizardDemoObjectsTest extends WizardModuleIntegTest {
 
     @Inject
     FixtureScripts fixtureScripts;
 
     @Inject
-    private XxxDemoObjects xxxDemoObjects;
+    private WizardDemoObjects wizardDemoObjects;
 
     @Before
     public void setUpData() throws Exception {
-        fixtureScripts.runFixtureScript(new XxxDemoObjectsFixture(), null);
+        fixtureScripts.runFixtureScript(new WizardDemoObjectsFixture(), null);
     }
 
 
     @Test
     public void listAll() throws Exception {
 
-        final List<XxxDemoObject> all = wrap(xxxDemoObjects).listAll();
+        final List<WizardDemoObject> all = wrap(wizardDemoObjects).listAll();
         Assertions.assertThat(all.size()).isEqualTo(3);
         
-        XxxDemoObject xxxDemoObject = wrap(all.get(0));
-        Assertions.assertThat(xxxDemoObject.getName()).isEqualTo("Foo");
+        WizardDemoObject wizardDemoObject = wrap(all.get(0));
+        Assertions.assertThat(wizardDemoObject.getName()).isEqualTo("Foo");
     }
     
     @Test
     public void create() throws Exception {
 
-        wrap(xxxDemoObjects).create("Faz");
+        wrap(wizardDemoObjects).create("Faz");
         
-        final List<XxxDemoObject> all = wrap(xxxDemoObjects).listAll();
+        final List<WizardDemoObject> all = wrap(wizardDemoObjects).listAll();
         Assertions.assertThat(all.size()).isEqualTo(4);
     }
 

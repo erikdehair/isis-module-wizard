@@ -16,12 +16,12 @@
  *  specific language governing permissions and limitations
  *  under the License.
  */
-package org.isisaddons.module.xxx.app;
+package org.isisaddons.module.wizard.app;
 
 /**
  * Bypasses security, meaning any user/password combination can be used to login.
  */
-public class XxxModuleAppManifestBypassSecurity extends XxxModuleAppManifest {
+public class WizardModuleAppManifestBypassSecurity extends WizardModuleAppManifest {
 
     @Override
     public String getAuthenticationMechanism() {

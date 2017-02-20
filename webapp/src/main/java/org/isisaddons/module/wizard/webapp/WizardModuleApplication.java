@@ -14,14 +14,7 @@
  *  specific language governing permissions and limitations
  *  under the License.
  */
-package org.isisaddons.module.xxx.webapp;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.nio.charset.Charset;
-import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
+package org.isisaddons.module.wizard.webapp;
 
 import com.google.common.base.Joiner;
 import com.google.common.io.Resources;
@@ -30,14 +23,18 @@ import com.google.inject.Module;
 import com.google.inject.name.Names;
 import com.google.inject.util.Modules;
 import com.google.inject.util.Providers;
-
+import org.apache.isis.viewer.wicket.viewer.IsisWicketApplication;
+import org.apache.isis.viewer.wicket.viewer.integration.wicket.AuthenticatedWebSessionForIsis;
 import org.apache.wicket.Session;
 import org.apache.wicket.request.Request;
 import org.apache.wicket.request.Response;
 import org.apache.wicket.request.http.WebRequest;
 
-import org.apache.isis.viewer.wicket.viewer.IsisWicketApplication;
-import org.apache.isis.viewer.wicket.viewer.integration.wicket.AuthenticatedWebSessionForIsis;
+import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.Charset;
+import java.util.List;
 
 
 /**
@@ -57,7 +54,7 @@ import org.apache.isis.viewer.wicket.viewer.integration.wicket.AuthenticatedWebS
  * </pre>
  * 
  */
-public class XxxModuleApplication extends IsisWicketApplication {
+public class WizardModuleApplication extends IsisWicketApplication {
 
     private static final long serialVersionUID = 1L;
 
@@ -103,7 +100,7 @@ public class XxxModuleApplication extends IsisWicketApplication {
         return request;
     }
 
-    private static final String APP_NAME = "Xxx Module Example App";
+    private static final String APP_NAME = "Wizard Module Example App";
     
     @Override
     protected Module newIsisWicketModule() {

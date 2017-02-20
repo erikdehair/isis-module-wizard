@@ -16,23 +16,22 @@
  *  specific language governing permissions and limitations
  *  under the License.
  */
-package org.isisaddons.module.xxx.app;
+package org.isisaddons.module.wizard.app;
+
+import org.apache.isis.applib.AppManifest;
+import org.apache.isis.applib.fixturescripts.FixtureScript;
+import org.isisaddons.module.wizard.WizardModule;
+import org.isisaddons.module.wizard.fixture.WizardFixtureModule;
 
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.isis.applib.AppManifest;
-import org.apache.isis.applib.fixturescripts.FixtureScript;
-
-import org.isisaddons.module.xxx.XxxModule;
-import org.isisaddons.module.xxx.fixture.XxxFixtureModule;
-
 /**
  * Bootstrap the application.
  */
-public class XxxModuleAppManifest implements AppManifest {
+public class WizardModuleAppManifest implements AppManifest {
 
     /**
      * Load all services and entities found in (the packages and subpackages within) these modules
@@ -40,9 +39,9 @@ public class XxxModuleAppManifest implements AppManifest {
     @Override
     public List<Class<?>> getModules() {
         return Arrays.asList(
-                XxxModule.class,
-                XxxFixtureModule.class,
-                XxxModuleAppModule.class
+                WizardModule.class,
+                WizardFixtureModule.class,
+                WizardModuleAppModule.class
         );
     }
 

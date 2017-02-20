@@ -19,7 +19,7 @@
         <relativePath />
     </parent>
 
-    <groupId>org.isisaddons.module.xxx</groupId>
+    <groupId>org.isisaddons.module.wizard</groupId>
     <artifactId>isis-module-xxx-enhance-all</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     

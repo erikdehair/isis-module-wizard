@@ -16,30 +16,28 @@
  *  specific language governing permissions and limitations
  *  under the License.
  */
-package org.isisaddons.module.xxx.app;
+package org.isisaddons.module.wizard.app;
+
+import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
+import org.apache.isis.applib.fixturescripts.FixtureScript;
+import org.isisaddons.module.wizard.fixture.scripts.scenarios.WizardDemoObjectsFixture;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
-
-import org.apache.isis.applib.fixturescripts.FixtureScript;
-
-import org.isisaddons.module.xxx.fixture.scripts.scenarios.XxxDemoObjectsFixture;
-
 /**
  * Run the app but without setting up any fixtures.
  */
-public class XxxModuleAppManifestWithFixtures extends XxxModuleAppManifest {
+public class WizardModuleAppManifestWithFixtures extends WizardModuleAppManifest {
 
     /**
      * Fixtures to be installed.
      */
     @Override
     public List<Class<? extends FixtureScript>> getFixtures() {
-        return Lists.newArrayList(XxxDemoObjectsFixture.class);
+        return Lists.newArrayList(WizardDemoObjectsFixture.class);
     }
 
     /**

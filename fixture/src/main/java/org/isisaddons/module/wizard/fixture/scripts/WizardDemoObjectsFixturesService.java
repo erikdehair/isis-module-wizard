@@ -14,7 +14,7 @@
  *  specific language governing permissions and limitations
  *  under the License.
  */
-package org.isisaddons.module.xxx.fixture.scripts;
+package org.isisaddons.module.wizard.fixture.scripts;
 
 import java.util.List;
 import org.apache.isis.applib.annotation.Action;
@@ -27,7 +27,7 @@ import org.apache.isis.applib.fixturescripts.FixtureResult;
 import org.apache.isis.applib.fixturescripts.FixtureScript;
 import org.apache.isis.applib.fixturescripts.FixtureScripts;
 import org.apache.isis.applib.fixturescripts.SimpleFixtureScript;
-import org.isisaddons.module.xxx.fixture.scripts.scenarios.XxxDemoObjectsFixture;
+import org.isisaddons.module.wizard.fixture.scripts.scenarios.WizardDemoObjectsFixture;
 
 /**
  * Enables fixtures to be installed from the application.
@@ -40,10 +40,10 @@ import org.isisaddons.module.xxx.fixture.scripts.scenarios.XxxDemoObjectsFixture
         menuOrder = "20",
         menuBar = DomainServiceLayout.MenuBar.SECONDARY
 )
-public class XxxDemoObjectsFixturesService extends FixtureScripts {
+public class WizardDemoObjectsFixturesService extends FixtureScripts {
 
-    public XxxDemoObjectsFixturesService() {
-        super(XxxDemoObjectsFixturesService.class.getPackage().getName());
+    public WizardDemoObjectsFixturesService() {
+        super(WizardDemoObjectsFixturesService.class.getPackage().getName());
     }
 
     @Override // compatibility with core 1.5.0
@@ -68,7 +68,7 @@ public class XxxDemoObjectsFixturesService extends FixtureScripts {
     )
     @MemberOrder(sequence="20")
     public Object installFixturesAndReturnFirst() {
-        final FixtureScript script = findFixtureScriptFor(XxxDemoObjectsFixture.class);
+        final FixtureScript script = findFixtureScriptFor(WizardDemoObjectsFixture.class);
         final List<FixtureResult> run = script.run(null);
         return run.get(0).getObject();
     }

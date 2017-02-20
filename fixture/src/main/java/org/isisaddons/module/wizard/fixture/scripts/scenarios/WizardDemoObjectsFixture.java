@@ -14,17 +14,17 @@
  *  specific language governing permissions and limitations
  *  under the License.
  */
-package org.isisaddons.module.xxx.fixture.scripts.scenarios;
+package org.isisaddons.module.wizard.fixture.scripts.scenarios;
 
 import org.apache.isis.applib.fixturescripts.DiscoverableFixtureScript;
 
-import org.isisaddons.module.xxx.fixture.dom.XxxDemoObject;
-import org.isisaddons.module.xxx.fixture.dom.XxxDemoObjects;
-import org.isisaddons.module.xxx.fixture.scripts.teardown.XxxDemoObjectsTearDownFixture;
+import org.isisaddons.module.wizard.fixture.dom.WizardDemoObject;
+import org.isisaddons.module.wizard.fixture.dom.WizardDemoObjects;
+import org.isisaddons.module.wizard.fixture.scripts.teardown.WizardDemoObjectsTearDownFixture;
 
-public class XxxDemoObjectsFixture extends DiscoverableFixtureScript {
+public class WizardDemoObjectsFixture extends DiscoverableFixtureScript {
 
-    public XxxDemoObjectsFixture() {
+    public WizardDemoObjectsFixture() {
         withDiscoverability(Discoverability.DISCOVERABLE);
     }
 
@@ -32,7 +32,7 @@ public class XxxDemoObjectsFixture extends DiscoverableFixtureScript {
     protected void execute(final ExecutionContext executionContext) {
 
         // prereqs
-	executionContext.executeChild(this, new XxxDemoObjectsTearDownFixture());
+	executionContext.executeChild(this, new WizardDemoObjectsTearDownFixture());
 
         // create
         create("Foo", executionContext);
@@ -42,13 +42,13 @@ public class XxxDemoObjectsFixture extends DiscoverableFixtureScript {
 
     // //////////////////////////////////////
 
-    private XxxDemoObject create(final String name, final ExecutionContext executionContext) {
-        return executionContext.addResult(this, xxxDemoObjects.create(name));
+    private WizardDemoObject create(final String name, final ExecutionContext executionContext) {
+        return executionContext.addResult(this, wizardDemoObjects.create(name));
     }
 
     // //////////////////////////////////////
 
     @javax.inject.Inject
-    private XxxDemoObjects xxxDemoObjects;
+    private WizardDemoObjects wizardDemoObjects;
 
 }

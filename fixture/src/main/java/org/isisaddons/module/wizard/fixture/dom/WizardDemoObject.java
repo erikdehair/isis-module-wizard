@@ -14,21 +14,18 @@
  *  specific language governing permissions and limitations
  *  under the License.
  */
-package org.isisaddons.module.xxx.fixture.dom;
+package org.isisaddons.module.wizard.fixture.dom;
+
+import org.apache.isis.applib.DomainObjectContainer;
+import org.apache.isis.applib.annotation.*;
+import org.apache.isis.applib.util.ObjectContracts;
 
 import javax.jdo.annotations.IdentityType;
 import javax.jdo.annotations.VersionStrategy;
-import org.apache.isis.applib.DomainObjectContainer;
-import org.apache.isis.applib.annotation.BookmarkPolicy;
-import org.apache.isis.applib.annotation.DomainObject;
-import org.apache.isis.applib.annotation.DomainObjectLayout;
-import org.apache.isis.applib.annotation.MemberOrder;
-import org.apache.isis.applib.annotation.Title;
-import org.apache.isis.applib.util.ObjectContracts;
 
 @javax.jdo.annotations.PersistenceCapable(
         identityType=IdentityType.DATASTORE,
-        schema="xxx")
+        schema="wizard")
 @javax.jdo.annotations.DatastoreIdentity(
         strategy=javax.jdo.annotations.IdGeneratorStrategy.IDENTITY,
          column="id")
@@ -36,12 +33,12 @@ import org.apache.isis.applib.util.ObjectContracts;
         strategy=VersionStrategy.VERSION_NUMBER, 
         column="version")
 @DomainObject(
-        objectType = "XXX_DEMO_OBJECT"
+        objectType = "WIZARD_DEMO_OBJECT"
 )
 @DomainObjectLayout(
         bookmarking = BookmarkPolicy.AS_ROOT
 )
-public class XxxDemoObject implements Comparable<XxxDemoObject> {
+public class WizardDemoObject implements Comparable<WizardDemoObject> {
 
     //region > name (property)
     
@@ -64,7 +61,7 @@ public class XxxDemoObject implements Comparable<XxxDemoObject> {
     //region > compareTo
 
     @Override
-    public int compareTo(XxxDemoObject other) {
+    public int compareTo(WizardDemoObject other) {
         return ObjectContracts.compare(this, other, "name");
     }
 

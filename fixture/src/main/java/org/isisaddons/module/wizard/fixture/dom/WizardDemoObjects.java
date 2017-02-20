@@ -14,7 +14,7 @@
  *  specific language governing permissions and limitations
  *  under the License.
  */
-package org.isisaddons.module.xxx.fixture.dom;
+package org.isisaddons.module.wizard.fixture.dom;
 
 import java.util.List;
 import org.apache.isis.applib.DomainObjectContainer;
@@ -30,12 +30,12 @@ import org.apache.isis.applib.annotation.SemanticsOf;
 
 @DomainService(
         nature = NatureOfService.VIEW,
-        repositoryFor = XxxDemoObject.class
+        repositoryFor = WizardDemoObject.class
 )
 @DomainServiceLayout(
         menuOrder = "10"
 )
-public class XxxDemoObjects {
+public class WizardDemoObjects {
 
 
     //region > listAll (action)
@@ -47,8 +47,8 @@ public class XxxDemoObjects {
             bookmarking = BookmarkPolicy.AS_ROOT
     )
     @MemberOrder(sequence = "1")
-    public List<XxxDemoObject> listAll() {
-        return container.allInstances(XxxDemoObject.class);
+    public List<WizardDemoObject> listAll() {
+        return container.allInstances(WizardDemoObject.class);
     }
 
     //endregion
@@ -56,9 +56,9 @@ public class XxxDemoObjects {
     //region > create (action)
     
     @MemberOrder(sequence = "2")
-    public XxxDemoObject create(
+    public WizardDemoObject create(
             final @ParameterLayout(named = "Name") String name) {
-        final XxxDemoObject obj = container.newTransientInstance(XxxDemoObject.class);
+        final WizardDemoObject obj = container.newTransientInstance(WizardDemoObject.class);
         obj.setName(name);
         container.persistIfNotAlready(obj);
         return obj;

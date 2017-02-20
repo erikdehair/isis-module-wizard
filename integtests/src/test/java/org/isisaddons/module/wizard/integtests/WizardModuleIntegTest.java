@@ -14,20 +14,22 @@
  *  specific language governing permissions and limitations
  *  under the License.
  */
-package org.isisaddons.module.xxx.fixture.scripts.teardown;
+package org.isisaddons.module.wizard.integtests;
 
-import org.apache.isis.applib.fixturescripts.FixtureScript;
-import org.apache.isis.applib.services.jdosupport.IsisJdoSupport;
+import org.junit.BeforeClass;
 
-public class XxxDemoObjectsTearDownFixture extends FixtureScript {
+import org.apache.isis.core.integtestsupport.IntegrationTestAbstract;
+import org.apache.isis.core.integtestsupport.scenarios.ScenarioExecutionForIntegration;
 
-    @Override
-    protected void execute(final ExecutionContext executionContext) {
-        isisJdoSupport.executeUpdate("delete from \"xxx\".\"XxxDemoObject\"");
+public abstract class WizardModuleIntegTest extends IntegrationTestAbstract {
+
+    @BeforeClass
+    public static void initClass() {
+        org.apache.log4j.PropertyConfigurator.configure("logging.properties");
+        WizardModuleSystemInitializer.initIsft();
+        
+        // instantiating will install onto ThreadLocal
+        new ScenarioExecutionForIntegration();
     }
-
-
-    @javax.inject.Inject
-    private IsisJdoSupport isisJdoSupport;
 
 }

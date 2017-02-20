@@ -14,29 +14,29 @@
  *  specific language governing permissions and limitations
  *  under the License.
  */
-package org.isisaddons.module.xxx.integtests;
+package org.isisaddons.module.wizard.integtests;
 
 import org.apache.log4j.Level;
 
 import org.apache.isis.core.integtestsupport.IsisSystemForTest;
 import org.apache.isis.objectstore.jdo.datanucleus.IsisConfigurationForJdoIntegTests;
 
-import org.isisaddons.module.xxx.app.XxxModuleAppManifest;
+import org.isisaddons.module.wizard.app.WizardModuleAppManifest;
 
 /**
  * Holds an instance of an {@link IsisSystemForTest} as a {@link ThreadLocal} on the current thread,
  * initialized with the app's domain services. 
  */
-public class XxxModuleSystemInitializer {
+public class WizardModuleSystemInitializer {
     
-    private XxxModuleSystemInitializer(){}
+    private WizardModuleSystemInitializer(){}
 
     public static IsisSystemForTest initIsft() {
         IsisSystemForTest isft = IsisSystemForTest.getElseNull();
         if(isft == null) {
             isft = IsisSystemForTest.builder()
                     .withLoggingAt(Level.INFO)
-                    .with(new XxxModuleAppManifest())
+                    .with(new WizardModuleAppManifest())
                     .with(new IsisConfigurationForJdoIntegTests())
                     .build();
             isft.setUpSystem();

@@ -78,7 +78,7 @@ To use "out-of-the-box":
     public List<Class<?>> getModules() {
         return Arrays.asList(
                 ...
-                org.isisaddons.module.xxx.XxxModule.class,
+                org.isisaddons.module.wizard.WizardModule.class,
         );
     }
 
@@ -90,7 +90,7 @@ To use "out-of-the-box":
 ----
   isis.services.ServicesInstallerFromAnnotation.packagePrefix=\
                                 ...\
-                                org.isisaddons.module.xxx.dom,\
+                                org.isisaddons.module.wizard.dom,\
                                 ...
 ----
 
