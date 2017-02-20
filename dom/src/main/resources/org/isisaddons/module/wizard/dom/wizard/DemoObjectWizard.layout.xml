@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bs3:grid
+        xsi:schemaLocation="http://isis.apache.org/applib/layout/component http://isis.apache.org/applib/layout/component/component.xsd http://isis.apache.org/applib/layout/grid/bootstrap3 http://isis.apache.org/applib/layout/grid/bootstrap3/bootstrap3.xsd"
+        xmlns:bs3="http://isis.apache.org/applib/layout/grid/bootstrap3"
+        xmlns:cpt="http://isis.apache.org/applib/layout/component"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <bs3:row>
+        <bs3:col span="12" unreferencedActions="true">
+            <cpt:domainObject/>
+            <cpt:action id="clearHints"/>
+            <cpt:action id="downloadLayoutXml"/>
+            <cpt:action id="rebuildMetamodel"/>
+        </bs3:col>
+    </bs3:row>
+    <bs3:row>
+        <bs3:col span="12" unreferencedCollections="true">
+            <cpt:collection id="breadCrumbs"/>
+        </bs3:col>
+    </bs3:row>
+    <bs3:row>
+        <bs3:col span="4">
+            <cpt:fieldSet name="General" id="general" unreferencedProperties="true">
+                <cpt:property id="someText"/>
+                <cpt:property id="state"/>
+            </cpt:fieldSet>
+            <cpt:fieldSet name="Shipment">
+                <cpt:property id="shipment"/>
+            </cpt:fieldSet>
+            <cpt:fieldSet name="Contact">
+                <cpt:property id="contact"/>
+            </cpt:fieldSet>
+            <cpt:fieldSet name="Summary Text">
+                <cpt:property id="someSummaryText"/>
+            </cpt:fieldSet>
+        </bs3:col>
+        <bs3:col span="4">
+            <cpt:fieldSet name="Errors">
+                <cpt:property id="errorMessage"/>
+            </cpt:fieldSet>
+        </bs3:col>
+    </bs3:row>
+    <bs3:row>
+        <bs3:col span="3">
+            <cpt:action id="cancel"/>
+        </bs3:col>
+        <bs3:col span="9">
+            <cpt:action id="previous"/>
+            <cpt:action id="next"/>
+            <cpt:action id="finish"/>
+        </bs3:col>
+    </bs3:row>
+</bs3:grid>

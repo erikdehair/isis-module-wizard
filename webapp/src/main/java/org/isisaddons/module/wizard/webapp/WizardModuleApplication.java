@@ -23,12 +23,14 @@ import com.google.inject.Module;
 import com.google.inject.name.Names;
 import com.google.inject.util.Modules;
 import com.google.inject.util.Providers;
+import org.apache.isis.viewer.wicket.ui.app.registry.ComponentFactoryRegistrar;
 import org.apache.isis.viewer.wicket.viewer.IsisWicketApplication;
 import org.apache.isis.viewer.wicket.viewer.integration.wicket.AuthenticatedWebSessionForIsis;
 import org.apache.wicket.Session;
 import org.apache.wicket.request.Request;
 import org.apache.wicket.request.Response;
 import org.apache.wicket.request.http.WebRequest;
+import org.isisaddons.module.wizard.webapp.wicket.components.WizardDemoComponentFactoryRegistrar;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
@@ -117,6 +119,7 @@ public class WizardModuleApplication extends IsisWicketApplication {
                 bind(InputStream.class).annotatedWith(Names.named("metaInfManifest")).toProvider(Providers.of(getServletContext().getResourceAsStream("/META-INF/MANIFEST.MF")));
                 // if uncommented, then overrides isis.appManifest in config file.
                 // bind(AppManifest.class).toInstance(new XxxAppAppManifest());
+                bind(ComponentFactoryRegistrar.class).to(WizardDemoComponentFactoryRegistrar.class);
             }
         };
 
